@@ -37,7 +37,7 @@ public class FeignInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
 //         1.用户信息
-        CurrentUserInfo userInfo = userInfoHandler.currentUserInfo();
+        CurrentUserInfo userInfo = (CurrentUserInfo) userInfoHandler.currentUserInfo();
         String userInfoStr = Base64Utils.encodeStr(JsonUtils.toJsonStr(userInfo));
         requestTemplate.header(USER_INFO, userInfoStr);
         // 2.访问来源信息
