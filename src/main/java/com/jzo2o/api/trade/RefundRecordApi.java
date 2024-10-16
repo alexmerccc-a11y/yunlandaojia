@@ -19,9 +19,14 @@ public interface RefundRecordApi {
      * 将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退到买家帐号上。
      * @param tradingOrderNo 支付单号
      * @param refundAmount 退款金额
+     * @param refundNo 退款单号
      * @return
      */
+//    @PostMapping("refund")
+//    ExecutionResultResDTO refundTrading(@RequestParam("tradingOrderNo") Long tradingOrderNo,
+//                                        @RequestParam("refundAmount") BigDecimal refundAmount);
     @PostMapping("refund")
     ExecutionResultResDTO refundTrading(@RequestParam("tradingOrderNo") Long tradingOrderNo,
+                                        @RequestParam("refundNo") Long refundNo,
                                         @RequestParam("refundAmount") BigDecimal refundAmount);
 }
