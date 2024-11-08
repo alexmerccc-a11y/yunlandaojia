@@ -21,7 +21,7 @@ public interface CouponApi {
      * @param totalAmount 总金额，单位分
      */
     @GetMapping("/getAvailable")
-    List<AvailableCouponsResDTO> getAvailable(@RequestParam("totalAmount") BigDecimal totalAmount);
+    List<AvailableCouponsResDTO> getAvailable(@RequestParam("userId") Long userId,@RequestParam("totalAmount") BigDecimal totalAmount);
 
     /**
      * 优惠券使用,并返回优惠金额
