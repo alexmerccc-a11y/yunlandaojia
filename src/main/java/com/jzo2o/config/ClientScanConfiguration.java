@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Import;
 @Import({com.jzo2o.utils.MyQueryMapEncoder.class})
 @ConditionalOnProperty(prefix = "feign", name = "enable", havingValue = "true")
 public class ClientScanConfiguration {
+    //test
 
     @Bean
     public FeignInterceptor feignInterceptor(UserInfoHandler userInfoHandler, RequestIdHandler requestIdHandler){
